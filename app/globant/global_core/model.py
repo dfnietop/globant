@@ -1,4 +1,4 @@
-from src.globant.global_utils.database import Base
+from app.globant.global_utils.database import Base
 from sqlalchemy import Column, String, Boolean, Integer
 
 

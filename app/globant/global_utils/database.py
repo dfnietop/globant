@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from src.globant.global_utils import config
+from app.globant.global_utils import config
 
 
 SQLALCHEMY_DATABASE_URL = config.DATABASE_URI

@@ -1,8 +1,7 @@
-import pandas as pd
 from pandas import DataFrame
 
-from src.globant.global_sql.global_etl import GlobalEtl
-from src.globant.global_utils import database, sql
+from app.globant.global_sql.global_etl import GlobalEtl
+from app.globant.global_utils import database, sql
 
 
 class EmployedFacade:
@@ -16,8 +15,6 @@ class EmployedFacade:
         self.__global_etl.insert(list)
 
     def search_group(self, year: int) -> DataFrame:
-        #query = sql.group_q_numbers_employess
-        # df = self.__global_etl.searchGroup(query, year  )
         df = self.__global_etl.searchGroup(year)
         return df
 

@@ -3,11 +3,11 @@ import uvicorn as uvicorn
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends
 import pandas as pd
 
-from src.globant.global_facade.deparment_facade import DepartmentFacade
-from src.globant.global_facade.employed_facade import EmployedFacade
-from src.globant.global_facade.job_facade import JobFacade
-from src.globant.global_core import schema, model
-from src.globant.global_utils.database import SessionLocal, engine
+from app.globant.global_facade.deparment_facade import DepartmentFacade
+from app.globant.global_facade.employed_facade import EmployedFacade
+from app.globant.global_facade.job_facade import JobFacade
+from app.globant.global_core import schema, model
+from app.globant.global_utils.database import SessionLocal, engine
 
 model.Base.metadata.create_all(bind=engine)
 app = FastAPI()
