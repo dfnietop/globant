@@ -16,7 +16,7 @@ class EmployedFacade:
         self.__global_etl.insert(list)
 
     def search_group(self, year: int) -> DataFrame:
-        query = sql.group_q_numbers_employess
+        #query = sql.group_q_numbers_employess
         # df = self.__global_etl.searchGroup(query, year  )
         df = self.__global_etl.searchGroup(year)
         return df

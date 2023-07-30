@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from src.globant.global_core import schema, model
+from src.globant.global_core.model import ReportGroupHiredEmployees
 from src.globant.global_utils import database, config, sql
 
 
@@ -37,15 +38,14 @@ class GlobalEtl:
     def searchGroup(self, parameter):
         try:
             print(f'select proccess ')
-            output = self.db.query(model.ReportGroupHiredEmployees).filter(model.ReportGroupHiredEmployees.year == parameter).all()
-            return output
+            return self.db.execute(text(sql.group_q_numbers_employess),[{"year":parameter}]).fetchall()
         except Exception as e:
             raise e
 
     def searchTotal(self, parameter):
         try:
             print(f'select proccess ')
-            output = self.db.query(model.ReportTotalHiredEmployees).filter(model.ReportTotalHiredEmployees.year == parameter).all()
+            return self.db.execute(text(sql.total_numbers_employess_hired),[{"year":parameter}]).fetchall()
             return output
         except Exception as e:
             raise e

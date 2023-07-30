@@ -1,14 +1,13 @@
-group_q_numbers_employess='''
-select c.department,
-       c.job,
+group_q_numbers_employess="""
+select department,
+       job,
        sum(q1) q1 ,
        sum(q2) q2,
        sum(q3) q3,
        sum(q4) q4
 from vw_group_hired 
-where vw_group_hired.year = :x
-group by 1,2
-limit 10'''
+where vw_group_hired.year = :year
+group by 1,2"""
 
 
 total_numbers_employess_hired ='''
@@ -18,5 +17,5 @@ select
     year,
     hired
 from vw_total_hired
-where vw_total_hired.year = :x
+where vw_total_hired.year = :year
 '''
