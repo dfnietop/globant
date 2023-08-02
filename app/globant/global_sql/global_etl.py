@@ -1,8 +1,8 @@
 import pandas as pd
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from app.globant.global_core import schema, model
-from app.globant.global_utils import database, config, sql
+from globant.global_core import schema, model
+from globant.global_utils import database, config, sql
 
 
 class GlobalEtl:

@@ -1,8 +1,8 @@
 import pandas as pd
 from pandas import DataFrame
 
-from app.globant.global_sql.global_etl import GlobalEtl
-from app.globant.global_utils import database
+from globant.global_utils import database
+from globant.global_sql.global_etl import GlobalEtl
 
 
 class DepartmentFacade:
